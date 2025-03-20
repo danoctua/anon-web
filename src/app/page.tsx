@@ -6,6 +6,7 @@ import HeroBanner from '@/components/HeroBanner';
 import {en} from '@/translations/en';
 import {ru} from '@/translations/ru';
 import {Suspense} from "react";
+import ActionButtons, {ActionButton} from "@/components/ActionButtons";
 // import Timeline from "@/components/Timeline";
 // import TimelineItem from "@/components/TimelineItem";
 
@@ -44,24 +45,12 @@ const HomeContent = () => {
                         {/*    </div>*/}
                         {/*</div>*/}
 
-                        <div className="flex flex-wrap justify-center gap-4">
-                            <a href="https://t.me/community_bot/club"
-                               className="px-6 py-2 bg-[#f9e3b0] text-black rounded-full hover:bg-[#f9e3b0]/90 transition-colors">
-                                {t.buttons.join}
-                            </a>
-                            <a href="https://t.me/anon_club/2"
-                               className="px-6 py-2 border border-[#f9e3b0] text-[#f9e3b0] rounded-full hover:bg-[#f9e3b0]/10 transition-colors">
-                                {t.buttons.history}
-                            </a>
-                            <a href="https://app.ston.fi/swap?chartVisible=false&ft=TON&tt=ANON"
-                               className="px-6 py-2 border border-[#f9e3b0] text-[#f9e3b0] rounded-full hover:bg-[#f9e3b0]/10 transition-colors">
-                                {t.buttons.swap}
-                            </a>
-                            <a href="https://fragment.com/numbers"
-                               className="px-6 py-2 border border-[#f9e3b0] text-[#f9e3b0] rounded-full hover:bg-[#f9e3b0]/10 transition-colors">
-                                {t.buttons.getNumber}
-                            </a>
-                        </div>
+                        <ActionButtons>
+                            <ActionButton isAccent text={t.buttons.join} href={"https://t.me/community_bot/club"}/>
+                            <ActionButton text={t.buttons.history} href={"https://t.me/anon_club/2"}/>
+                            <ActionButton text={t.buttons.swap} href={"https://app.ston.fi/swap?chartVisible=false&ft=TON&tt=ANON"}/>
+                            <ActionButton text={t.buttons.getNumber} href={"https://fragment.com/numbers"}/>
+                        </ActionButtons>
                     </div>
                 </section>
 
