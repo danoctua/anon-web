@@ -7,7 +7,6 @@ const TimelineItem: FC<PropsWithChildren<{
 }>> = ({title, status}) => {
     let statusImgSrc
     let fontStyleClasses: string[] = []
-    console.log(status)
 
     switch (status) {
         case "done":
