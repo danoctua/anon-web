@@ -1,0 +1,75 @@
+@use "tailwindcss";
+
+:root {
+  --foreground-rgb: rgb(255, 255, 255);
+  --background-start-rgb: rgb(36, 36, 36);
+  --background-middle-rgb: rgb(12, 12, 12);
+  --background-end-rgb: rgb(0, 0, 0);
+}
+
+body {
+  color: var(--foreground-rgb);
+  background: linear-gradient(
+                  180deg,
+                  var(--background-start-rgb) 0%,
+                  var(--background-middle-rgb) 38.5%,
+                  var(--background-end-rgb) 100%
+  );
+  min-height: 100vh;
+}
+
+@layer components {
+  .container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+}
+
+.button-radial {
+
+  &-pink {
+    @extend .button-radial;
+    background: radial-gradient(circle, #F9E3B0 13%, #FFBAAB 42%, #B4BAEC 87%);
+  }
+}
+
+
+.text-radial {
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent;
+
+  &-pink {
+    @extend .text-radial;
+    background: radial-gradient(circle, #F9E3B0 13%, #FFBAAB 42%, #B4BAEC 87%);
+  }
+
+  &-green {
+    @extend .text-radial;
+    background: radial-gradient(circle, #00CD6B 13%, #00D186 42%, #00CFCF 87%);
+  }
+}
+
+.styled-pill {
+  display: inline-block;
+  padding: 12px 24px;
+  border-radius: 999px; /* Fully rounded shape */
+  font-weight: bold;
+  font-size: 18px;
+  text-align: center;
+  color: black; /* Adjust based on contrast */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  border: none;
+
+  &-rare {
+    @extend .styled-pill;
+    background: conic-gradient(
+                    #FBBFBD 7%,
+                    #C8D4DA 24%,
+                    #FFFFFF 43%,
+                    #AEC0CE 53%,
+                    #E3E9EE 66%,
+                    #FABFBC 71%,
+                    #D6DFE6 86%,
+                    #B8C9D3 92%
+    );
+  }
+}
