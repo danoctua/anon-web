@@ -1,6 +1,5 @@
 'use client';
 
-import Image from 'next/image';
 import Logo from '@/components/Logo';
 import NavIconLink from '@/components/NavIconLink';
 import LanguageSwitcher from './LanguageSwitcher';

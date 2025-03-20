@@ -5,10 +5,21 @@ import Header from '@/components/Header';
 import HeroBanner from '@/components/HeroBanner';
 import {en} from '@/translations/en';
 import {ru} from '@/translations/ru';
+import {Suspense} from "react";
 // import Timeline from "@/components/Timeline";
 // import TimelineItem from "@/components/TimelineItem";
 
-export default function Home() {
+
+const Home = () => {
+    return (
+        <Suspense fallback={<div>Loading...</div>}>
+            <HomeContent/>
+        </Suspense>
+    )
+}
+
+
+const HomeContent = () => {
     const searchParams = useSearchParams();
     const locale = searchParams.get('locale') || 'en';
     const t = locale === 'en' ? en : ru;
@@ -71,3 +82,6 @@ export default function Home() {
         </main>
     );
 }
+
+
+export default Home;

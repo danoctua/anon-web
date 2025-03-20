@@ -1,5 +1,3 @@
-'use client';
-
 interface HeroBannerProps {
   translations: {
     introducing: string;

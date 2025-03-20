@@ -1,10 +1,9 @@
-'use client';
-
 import Link from 'next/link';
+import {ReactNode} from "react";
 
 interface NavLinkProps {
   href: string;
-  children: React.ReactNode;
+  children: ReactNode;
   isAccent?: boolean;
 }
 
