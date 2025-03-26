@@ -21,9 +21,9 @@ export const metadata: Metadata = {
     title: "ANON",
     description: "From 8 Club with love",
     icons: [
-        {url: "/favicons/favicon-16.png", sizes: "16x16", type: "image/png"},
-        {url: "/favicons/favicon-32.png", sizes: "32x32", type: "image/png"},
-        {url: "/favicons/favicon-160.png", sizes: "160x160", type: "image/png"},
+        {url: "/static/favicons/favicon-16.png", sizes: "16x16", type: "image/png"},
+        {url: "/static/favicons/favicon-32.png", sizes: "32x32", type: "image/png"},
+        {url: "/static/favicons/favicon-160.png", sizes: "160x160", type: "image/png"},
     ],
     openGraph: {
         title: "ANON",
