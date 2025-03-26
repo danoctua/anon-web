@@ -24,7 +24,16 @@ export const metadata: Metadata = {
         {url: "/favicons/favicon-16.png", sizes: "16x16", type: "image/png"},
         {url: "/favicons/favicon-32.png", sizes: "32x32", type: "image/png"},
         {url: "/favicons/favicon-160.png", sizes: "160x160", type: "image/png"},
-    ]
+    ],
+    openGraph: {
+        title: "ANON",
+        description: "DAO community. From 8 Club with love",
+        images: [
+            {url: "/anon.png", width: 1200, height: 630, alt: "ANON"},
+        ],
+        url: "https://anon.tg",
+        type: "website",
+    }
 };
 
 export default async function RootLayout(
