@@ -17,11 +17,11 @@ const ACHIEVEMENTS = {
     },
     community: {
         icon: <></>,
-        url: "https://t.me/anon_club/34",
+        url: "https://t.me/anon_club/263",
     },
     dao: {
         icon: <></>,
-        url: "https://t.me/anon_club/34",
+        url: "https://t.me/anon_club/226",
     }
 }
 
