@@ -5,7 +5,7 @@ export default function Logo() {
   return (
     <Link href="/" className="inline-block">
       <Image
-        src="/logos/logo.svg"
+        src="/static/logos/logo.svg"
         alt="ANON"
         width={133}
         height={45}

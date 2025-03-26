@@ -3,6 +3,9 @@ import {Inter, Geist_Mono} from "next/font/google";
 import "./globals.scss";
 import {ReactNode} from "react";
 import {Analytics} from "@vercel/analytics/react"
+import Script from "next/script";
+import {NextIntlClientProvider} from "next-intl";
+import {getLocale} from "next-intl/server";
 
 const inter = Inter({
     variable: "--font-inter",
@@ -24,15 +27,15 @@ export const metadata: Metadata = {
     ]
 };
 
-export default function RootLayout(
-    {children,}: Readonly<{ children: ReactNode; }>
+export default async function RootLayout(
+    {children}: Readonly<{ children: ReactNode }>,
 ) {
+    const locale = await getLocale();
     return (
-        <html lang="en">
-        <body
-            className={`${inter.variable} ${geistMono.variable} antialiased min-h-screen`}
-        >
-        {children}
+        <html lang={locale}>
+        <body className={`${inter.variable} ${geistMono.variable} antialiased min-h-screen`}>
+        <Script src="https://widgets.coingecko.com/gecko-coin-price-chart-widget.js"></Script>
+        <NextIntlClientProvider>{children}</NextIntlClientProvider>
         <Analytics/>
         </body>
         </html>

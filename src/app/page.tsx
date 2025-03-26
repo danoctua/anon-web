@@ -1,14 +1,11 @@
 'use client';
 
-import {useSearchParams} from 'next/navigation';
 import Header from '@/components/Header';
 import HeroBanner from '@/components/HeroBanner';
-import {en} from '@/translations/en';
-import {ru} from '@/translations/ru';
 import {Suspense} from "react";
-import ActionButtons, {ActionButton} from "@/components/ActionButtons";
-// import Timeline from "@/components/Timeline";
-// import TimelineItem from "@/components/TimelineItem";
+import Achievements from "@/components/Achievements";
+import {useTranslations} from "next-intl";
+import Partners from "@/components/Partners";
 
 
 const Home = () => {
@@ -21,38 +18,21 @@ const Home = () => {
 
 
 const HomeContent = () => {
-    const searchParams = useSearchParams();
-    const locale = searchParams.get('locale') || 'en';
-    const t = locale === 'en' ? en : ru;
-
+    const t = useTranslations()
     return (
         <main className="min-h-screen flex flex-col">
             <div className={"flex-1"}>
-                <Header locale={locale}/>
-                <HeroBanner translations={t.hero}/>
+                <Header/>
+                <HeroBanner/>
 
-                {/* Numbers Section */}
-                <section className="py-20">
-                    <div className="container mx-auto px-4">
-                        {/*<div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">*/}
-                        {/*    <div className="styled-pill-rare">{t.numbers.users}</div>*/}
-                        {/*    <div className="text-center">*/}
-                        {/*        <div*/}
-                        {/*            className="text-3xl md:text-4xl font-bold text-[#ffbaab] mb-4">{t.numbers.transactions}</div>*/}
-                        {/*    </div>*/}
-                        {/*    <div className="text-center">*/}
-                        {/*        <div className="text-3xl md:text-4xl font-bold text-[#b4baec] mb-4">{t.numbers.volume}</div>*/}
-                        {/*    </div>*/}
-                        {/*</div>*/}
+                <Achievements/>
 
-                        <ActionButtons>
-                            <ActionButton isAccent text={t.buttons.join} href={"https://t.me/community_bot/club"}/>
-                            <ActionButton text={t.buttons.history} href={"https://t.me/anon_club/2"}/>
-                            <ActionButton text={t.buttons.swap} href={"https://app.ston.fi/swap?chartVisible=false&ft=TON&tt=ANON"}/>
-                            <ActionButton text={t.buttons.getNumber} href={"https://fragment.com/numbers"}/>
-                        </ActionButtons>
-                    </div>
+                <section>
+                    {/* @ts-expect-error custom coingecko block */}
+                    <gecko-coin-price-chart-widget locale="en" dark-mode="true" transparent-background="true" coin-id="anon-ton" initial-currency="usd" suppressHydrationWarning></gecko-coin-price-chart-widget>
                 </section>
+
+                <Partners/>
 
 
                 {/* Completed Items Section */}
@@ -65,7 +45,7 @@ const HomeContent = () => {
 
             <footer className="py-8 text-center text-white/60">
                 <div className="container mx-auto px-4">
-                    <p>&copy; {new Date().getFullYear()} {t.footer.rights}</p>
+                    <p>&copy; {new Date().getFullYear()} {t('Footer.rights')}</p>
                 </div>
             </footer>
         </main>

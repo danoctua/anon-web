@@ -1,0 +1,62 @@
+{
+    "Navigation": {
+        "home": "Home",
+        "about": "About",
+        "services": "Services",
+        "contact": "Contact",
+        "telegram": "Telegram",
+        "twitter": "Twitter"
+    },
+    "HeroBanner": {
+        "introducing": "Introducing",
+        "selfOrganizing": "DAO",
+        "community": "Community",
+        "buttons": {
+            "join": "Join us 🎱",
+            "history": "History",
+            "swap": "Swap",
+            "getNumber": "Buy +888"
+        }
+    },
+    "Achievements": {
+        "title": "Achievements",
+        "holders": {
+            "title": "Holders",
+            "description": "40000+ unique holders"
+        },
+        "listings": {
+            "title": "Listings",
+            "description": "Listing on Ston.fi, DeDust.io, xRocket, MEXC and other platforms"
+        },
+        "volume": {
+            "title": "Volume",
+            "description": "1st place by volume per day on TON and 30M$ Market Cap in the first 3 days"
+        },
+        "community": {
+            "title": "Community",
+            "description": "Only diamond hands with a positive vibe"
+        },
+        "dao": {
+            "title": "DAO",
+            "description": "Decentralized Autonomous Organization driven by community with a voting system"
+        }
+    },
+    "Partners": {
+        "title": "Partners",
+        "catizen": {
+            "title": "Catizen",
+            "description": "Through this partnership, we actively support each other's activities and develop TON ecosystem together"
+        },
+        "fish": {
+            "title": "Fish",
+            "description": "With the common goal of growing the TON ecosystem, TON FISH and ANON have formed a partnership!\n\nThrough this partnership, we will actively support each other's activities."
+        },
+        "you": {
+            "title": "You",
+            "description": "You, anon, are the most important supporter for us. We are building a community-driven project and we need you to make it happen."
+        }
+    },
+    "Footer": {
+        "rights": "From 8 club \uD83C\uDFB1. All rights reserved."
+    }
+}

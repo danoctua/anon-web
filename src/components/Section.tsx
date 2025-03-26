@@ -7,9 +7,9 @@ const Section: FC<PropsWithChildren<{
     children: ReactNode;
 }>> = ({title, isAccent, children}) => {
     return (
-        <section className={"py-20"}>
-            <div className="container mx-auto px-4">
-                <h2 className={`text-5xl text-center mb-12 ${isAccent ? "text-radial-pink" : ""}`}>{title}</h2>
+        <section className={"py-8"}>
+            <div className="container max-w-[888px] mx-auto px-4">
+                <h2 className={`text-4xl md:text-5xl font-bold pt-12 pb-8 ${isAccent ? "text-radial-pink" : ""}`}>{title}</h2>
                 {children}
             </div>
         </section>
