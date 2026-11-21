@@ -1,21 +1,24 @@
-import type {Metadata} from "next";
-import {Inter, Geist_Mono} from "next/font/google";
+import type {Metadata, Viewport} from "next";
+import {Inter_Tight, JetBrains_Mono} from "next/font/google";
 import "./globals.scss";
 import {ReactNode} from "react";
 import {Analytics} from "@vercel/analytics/react"
-import { SpeedInsights } from "@vercel/speed-insights/next"
+import {SpeedInsights} from "@vercel/speed-insights/next"
 import Script from "next/script";
 import {NextIntlClientProvider} from "next-intl";
 import {getLocale} from "next-intl/server";
 
-const inter = Inter({
-    variable: "--font-inter",
-    subsets: ["latin"],
+const interTight = Inter_Tight({
+    variable: "--font-inter-tight",
+    subsets: ["latin", "cyrillic"],
+    weight: ["400", "500", "600", "700"],
+    style: ["normal", "italic"],
 });
 
-const geistMono = Geist_Mono({
-    variable: "--font-geist-mono",
-    subsets: ["latin"],
+const jetbrainsMono = JetBrains_Mono({
+    variable: "--font-jetbrains-mono",
+    subsets: ["latin", "cyrillic"],
+    weight: ["400", "500"],
 });
 
 export const metadata: Metadata = {
@@ -37,13 +40,17 @@ export const metadata: Metadata = {
     }
 };
 
+export const viewport: Viewport = {
+    themeColor: "#0A0A0A",
+};
+
 export default async function RootLayout(
     {children}: Readonly<{ children: ReactNode }>,
 ) {
     const locale = await getLocale();
     return (
-        <html lang={locale}>
-        <body className={`${inter.variable} ${geistMono.variable} antialiased min-h-screen`}>
+        <html lang={locale} className={`${interTight.variable} ${jetbrainsMono.variable}`}>
+        <body className="antialiased">
         <Script src="https://widgets.coingecko.com/gecko-coin-price-chart-widget.js"></Script>
         <NextIntlClientProvider>{children}</NextIntlClientProvider>
         <Analytics/>

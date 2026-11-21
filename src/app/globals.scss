@@ -1,105 +1,202 @@
 @use "tailwindcss";
 
-:root {
-  --foreground-rgb: rgb(255, 255, 255);
-  --background-start-rgb: rgb(36, 36, 36);
-  --background-middle-rgb: rgb(12, 12, 12);
-  --background-end-rgb: rgb(0, 0, 0);
+@theme inline {
+  --color-ink: #0A0A0A;
+  --color-fg: #EDEAE3;
+  --color-paper: #F2EBDD;
+  --color-line: #3A3833;
+  --color-line-soft: #262522;
+  --color-muted: #9A968E;
+  --color-soft: #B3AFA6;
+  --color-grid: #1C1B19;
+
+  --font-display: var(--font-inter-tight), "Inter Tight", system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains-mono), "JetBrains Mono", ui-monospace, monospace;
+}
+
+html {
+  background: var(--color-ink);
 }
 
 body {
-  color: var(--foreground-rgb);
-  background: linear-gradient(
-                  180deg,
-                  var(--background-start-rgb) 0%,
-                  var(--background-middle-rgb) 38.5%,
-                  var(--background-end-rgb) 100%
-  );
+  margin: 0;
   min-height: 100vh;
+  background: var(--color-ink);
+  color: var(--color-fg);
+  font-family: var(--font-display);
+  overflow-x: hidden;
 }
 
-@layer components {
-  .container {
-    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
   }
 }
 
-.button-radial {
-
-  &-pink {
-    @extend .button-radial;
-    background: radial-gradient(circle, #F9E3B0 13%, #FFBAAB 42%, #B4BAEC 87%);
-  }
+a:hover {
+  color: var(--color-paper);
 }
 
-
-.text-radial {
-  -webkit-background-clip: text !important;
+/* Brand gradient text (cream → peach → lavender) */
+.text-gradient {
+  background: radial-gradient(circle at 50% 50%, #F9E3B0 13%, #FFBAAB 42%, #B4BAEC 87%);
+  -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
+  color: transparent;
+}
 
-  &-pink {
-    @extend .text-radial;
-    background: radial-gradient(circle, #F9E3B0 13%, #FFBAAB 42%, #B4BAEC 87%);
-  }
+/* Underline that grows on hover */
+.link-underline {
+  background-image: linear-gradient(currentColor, currentColor);
+  background-size: 0% 1px;
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  transition: background-size 0.45s cubic-bezier(0.2, 0.7, 0.2, 1);
 
-  &-green {
-    @extend .text-radial;
-    background: radial-gradient(circle, #00CD6B 13%, #00D186 42%, #00CFCF 87%);
+  &:hover,
+  &:focus-visible {
+    background-size: 100% 1px;
   }
 }
 
-.styled-pill {
-  display: inline-block;
-  padding: 12px 24px;
-  border-radius: 999px; /* Fully rounded shape */
-  font-weight: bold;
-  font-size: 18px;
-  text-align: center;
-  color: black; /* Adjust based on contrast */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  border: none;
+.btn-paper {
+  transition: background-color 0.25s, color 0.25s;
 
-  &-rare {
-    @extend .styled-pill;
-    background: conic-gradient(
-                    #FBBFBD 7%,
-                    #C8D4DA 24%,
-                    #FFFFFF 43%,
-                    #AEC0CE 53%,
-                    #E3E9EE 66%,
-                    #FABFBC 71%,
-                    #D6DFE6 86%,
-                    #B8C9D3 92%
-    );
+  &:hover,
+  &:active {
+    background-color: #FFFFFF;
+    color: var(--color-ink);
   }
 }
 
+/* Achievement rows: fill with paper on hover (pointer) / press (touch) */
+.row {
+  transition: background-color 0.35s, color 0.35s, padding 0.35s;
 
-.action-button {
-  padding: 8px 24px;
-  color: #f9e3b0;
-  border-radius: 24px;
-  border: 2px solid #f9e3b0;
-  font-weight: 600;
-  transition: background-color 0.3s;
-
-  &:hover {
-    background: rgba(249, 227, 176, 0.1);
+  .row-arrow {
+    transition: transform 0.35s;
   }
 
-  &-accent {
-    @extend .action-button;
-    color: black;
-    border: 2px solid #f9e3b0;
-    background: #f9e3b0;
+  &:active {
+    background-color: var(--color-paper);
+    color: var(--color-ink);
 
+    .row-muted {
+      color: #3A3732;
+    }
+  }
+
+  @media (hover: hover) {
     &:hover {
-      background: rgba(249, 227, 176, 0.9);
+      background-color: var(--color-paper);
+      color: var(--color-ink);
+      padding-left: 20px;
+      padding-right: 20px;
+
+      .row-muted {
+        color: #3A3732;
+      }
+
+      .row-arrow {
+        transform: translateX(6px) rotate(-45deg);
+      }
     }
   }
 }
 
+/* Partner text blocks */
+.partner {
+  transition: background-color 0.35s;
 
-.grid-cols-auto-fill {
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  .partner-arrow {
+    transition: transform 0.35s;
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      background-color: rgba(242, 235, 221, 0.04);
+      color: var(--color-fg);
+
+      .partner-arrow {
+        transform: translateX(6px);
+      }
+    }
+  }
+
+  &-accent {
+    @media (hover: hover) {
+      &:hover {
+        background-color: #FFFFFF;
+        color: var(--color-ink);
+      }
+    }
+  }
+}
+
+/* Motion */
+@keyframes wipe {
+  from {
+    clip-path: inset(0 0 100% 0);
+    translate: 0 40px;
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+    translate: none;
+  }
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    translate: 0 10px;
+  }
+  to {
+    opacity: 1;
+    translate: none;
+  }
+}
+
+@keyframes ticker {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .anim-wipe {
+    animation: wipe 1.2s cubic-bezier(0.7, 0, 0.2, 1) both;
+  }
+
+  .anim-fade {
+    animation: fade-up 0.8s ease both;
+  }
+
+  .anim-ticker {
+    animation: ticker 40s linear infinite;
+  }
+
+  .delay-1 { animation-delay: 0.6s; }
+  .delay-2 { animation-delay: 0.75s; }
+  .delay-3 { animation-delay: 0.9s; }
+
+  @supports (animation-timeline: view()) {
+    .reveal {
+      animation: fade-up linear both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 35%;
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .row,
+  .partner,
+  .link-underline,
+  .btn-paper {
+    transition: none !important;
+  }
 }

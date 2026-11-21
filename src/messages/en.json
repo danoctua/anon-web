@@ -1,36 +1,50 @@
 {
     "Navigation": {
-        "home": "Home",
-        "about": "About",
-        "services": "Services",
-        "contact": "Contact",
+        "tagline": "ANON / DAO on TON",
+        "achievements": "Achievements",
+        "price": "Price",
+        "partners": "Partners",
         "telegram": "Telegram",
-        "twitter": "Twitter"
+        "twitter": "X",
+        "menu": "Menu",
+        "close": "Close",
+        "openMenu": "Open menu",
+        "closeMenu": "Close menu",
+        "switchLanguage": "Switch to Russian"
     },
-    "HeroBanner": {
-        "introducing": "Introducing",
-        "selfOrganizing": "DAO",
-        "community": "Community",
+    "Hero": {
+        "srTitle": "ANON — Introducing DAO Community",
+        "kicker": "(00) Introducing",
+        "kickerSub": "From 8 Club with love",
+        "statement": "A self-organizing <accent>DAO</accent> community, run by diamond hands on TON.",
         "buttons": {
-            "join": "Join us 🎱",
-            "history": "History",
+            "join": "Join us",
             "swap": "Swap",
-            "getNumber": "Buy +888"
+            "getNumber": "Buy +888",
+            "history": "History"
         }
+    },
+    "Ticker": {
+        "label": "Highlights",
+        "holders": "40,000+ unique holders",
+        "volume": "#1 daily volume on TON in the first 3 days",
+        "marketCap": "$30M market cap in 3 days",
+        "listings": "Listed on Ston.fi · DeDust.io · xRocket"
     },
     "Achievements": {
         "title": "Achievements",
+        "kicker": "(01) — Five milestones",
         "holders": {
             "title": "Holders",
-            "description": "40000+ unique holders"
+            "description": "40,000+ unique holders"
         },
         "listings": {
             "title": "Listings",
-            "description": "Listing on Ston.fi, DeDust.io, xRocket, MEXC and other platforms"
+            "description": "Listing on Ston.fi, DeDust.io, xRocket and other platforms"
         },
         "volume": {
             "title": "Volume",
-            "description": "1st place by volume per day on TON and 30M$ Market Cap in the first 3 days"
+            "description": "In the first 3 days: 1st place by daily volume on TON and a $30M market cap"
         },
         "community": {
             "title": "Community",
@@ -41,11 +55,21 @@
             "description": "Decentralized Autonomous Organization driven by community with a voting system"
         }
     },
+    "Price": {
+        "title": "$ANON",
+        "kicker": "(02) — Live market",
+        "description": "Live price and chart for ANON on TON.",
+        "swap": "Swap on STON.fi",
+        "getNumber": "Buy +888 on Fragment",
+        "source": "Chart by CoinGecko"
+    },
     "Partners": {
         "title": "Partners",
+        "kicker": "(03) — Building TON together",
+        "readMore": "Read the announcement",
         "catizen": {
             "title": "Catizen",
-            "description": "Through this partnership, we actively support each other's activities and develop TON ecosystem together"
+            "description": "Through this partnership, we actively support each other's activities and develop TON ecosystem together."
         },
         "fish": {
             "title": "Fish",
@@ -53,10 +77,12 @@
         },
         "you": {
             "title": "You",
-            "description": "You, anon, are the most important supporter for us. We are building a community-driven project and we need you to make it happen."
+            "description": "You, anon, are the most important supporter for us. We are building a community-driven project and we need you to make it happen.",
+            "cta": "Join us"
         }
     },
     "Footer": {
-        "rights": "From 8 club \uD83C\uDFB1. All rights reserved."
+        "join": "Join us",
+        "rights": "From 8 club. All rights reserved."
     }
 }

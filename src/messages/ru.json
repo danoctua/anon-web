@@ -1,36 +1,50 @@
 {
     "Navigation": {
-        "home": "Главная",
-        "about": "О нас",
-        "services": "Услуги",
-        "contact": "Контакты",
+        "tagline": "ANON / DAO на TON",
+        "achievements": "Достижения",
+        "price": "Цена",
+        "partners": "Партнёры",
         "telegram": "Telegram",
-        "twitter": "Twitter"
+        "twitter": "X",
+        "menu": "Меню",
+        "close": "Закрыть",
+        "openMenu": "Открыть меню",
+        "closeMenu": "Закрыть меню",
+        "switchLanguage": "Переключить на английский"
     },
-    "HeroBanner": {
-        "introducing": "Представляем",
-        "selfOrganizing": "DAO",
-        "community": "Сообщество",
+    "Hero": {
+        "srTitle": "ANON — Представляем DAO-сообщество",
+        "kicker": "(00) Представляем",
+        "kickerSub": "С любовью от 8 Club",
+        "statement": "Самоорганизующееся <accent>DAO</accent>-сообщество diamond hands на TON.",
         "buttons": {
-            "join": "Присоединяйся 🎱",
-            "history": "История",
+            "join": "Присоединяйся",
             "swap": "Обмен",
-            "getNumber": "Купить +888"
+            "getNumber": "Купить +888",
+            "history": "История"
         }
+    },
+    "Ticker": {
+        "label": "Главное",
+        "holders": "40 000+ уникальных держателей",
+        "volume": "#1 по суточному объёму на TON в первые 3 дня",
+        "marketCap": "Капитализация $30M за 3 дня",
+        "listings": "Листинг на Ston.fi · DeDust.io · xRocket"
     },
     "Achievements": {
         "title": "Достижения",
+        "kicker": "(01) — Пять вех",
         "holders": {
             "title": "Холдеры",
-            "description": "40000+ уникальных держателей"
+            "description": "40 000+ уникальных держателей"
         },
         "listings": {
             "title": "Листинги",
-            "description": "Листинг на Ston.fi, DeDust.io, xRocket, MEXC и других платформах"
+            "description": "Листинг на Ston.fi, DeDust.io, xRocket и других платформах"
         },
         "volume": {
             "title": "Объём",
-            "description": "1-е место по суточному объёму на TON и капитализация 30M$ за первые 3 дня"
+            "description": "За первые 3 дня: 1-е место по суточному объёму на TON и капитализация $30M"
         },
         "community": {
             "title": "Сообщество",
@@ -41,11 +55,21 @@
             "description": "Децентрализованная автономная организация, управляемая сообществом через систему голосования"
         }
     },
+    "Price": {
+        "title": "$ANON",
+        "kicker": "(02) — Рынок",
+        "description": "Цена и график ANON на TON в реальном времени.",
+        "swap": "Обменять на STON.fi",
+        "getNumber": "Купить +888 на Fragment",
+        "source": "График: CoinGecko"
+    },
     "Partners": {
         "title": "Партнёры",
+        "kicker": "(03) — Строим TON вместе",
+        "readMore": "Читать анонс",
         "catizen": {
             "title": "Catizen",
-            "description": "Благодаря этому партнёрству мы активно поддерживаем друг друга и развиваем экосистему TON вместе"
+            "description": "Благодаря этому партнёрству мы активно поддерживаем друг друга и развиваем экосистему TON вместе."
         },
         "fish": {
             "title": "Fish",
@@ -53,10 +77,12 @@
         },
         "you": {
             "title": "Ты",
-            "description": "Ты, анон, — наш самый важный сторонник. Мы строим проект, управляемый сообществом, и нам нужен ты, чтобы это стало реальностью."
+            "description": "Ты, анон, — наш самый важный сторонник. Мы строим проект, управляемый сообществом, и нам нужен ты, чтобы это стало реальностью.",
+            "cta": "Присоединиться"
         }
     },
     "Footer": {
-        "rights": "От 8 club \uD83C\uDFB1. Все права защищены."
+        "join": "Присоединяйся",
+        "rights": "От 8 club. Все права защищены."
     }
 }

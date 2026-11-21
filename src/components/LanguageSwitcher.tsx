@@ -1,34 +1,30 @@
-import Image from 'next/image';
-import {useLocale} from "next-intl";
+'use client';
+
+import {useLocale, useTranslations} from "next-intl";
 import {setLocale} from "@/utils/setLocale";
 import {useTransition} from "react";
 
-export default function LanguageSwitcher() {
-  const locale = useLocale();
-  const [ isPending, startTransition ] = useTransition();
+export default function LanguageSwitcher({className = ""}: { className?: string }) {
+    const locale = useLocale();
+    const t = useTranslations("Navigation");
+    const [isPending, startTransition] = useTransition();
 
-  const toggleLanguage = () => {
-    const newLocale = locale === 'en' ? 'ru' : 'en';
-    startTransition(() => setLocale(newLocale).then());
-  };
+    const toggleLanguage = () => {
+        const newLocale = locale === 'en' ? 'ru' : 'en';
+        startTransition(() => setLocale(newLocale).then());
+    };
 
-  return (
-    <button
-      onClick={toggleLanguage}
-      className="flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 hover:bg-white/20 transition-colors"
-      aria-label={`Switch to ${locale === 'en' ? 'Russian' : 'English'}`}
-      disabled={isPending}
-    >
-      <Image
-        src="/static/icons/globe.svg"
-        alt="Language"
-        width={20}
-        height={20}
-        className="brightness-0 invert"
-      />
-      <span className="text-white font-medium">
-        {locale === 'en' ? 'РУ' : 'EN'}
-      </span>
-    </button>
-  );
-} 
+    return (
+        <button
+            type="button"
+            onClick={toggleLanguage}
+            disabled={isPending}
+            aria-label={t("switchLanguage")}
+            className={`h-11 px-3.5 border border-line bg-transparent font-mono text-[11px] md:text-xs uppercase tracking-[0.08em] cursor-pointer transition-colors hover:border-fg disabled:opacity-60 ${className}`}
+        >
+            <span className={locale === 'en' ? 'text-fg' : 'text-muted'}>EN</span>
+            <span className="text-muted"> / </span>
+            <span className={locale === 'ru' ? 'text-fg' : 'text-muted'}>РУ</span>
+        </button>
+    );
+}
